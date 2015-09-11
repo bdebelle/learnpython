@@ -1,0 +1,40 @@
+https://github.com/pydata/pandas/blob/master/scripts/boxplot_test.py
+# Imports matplotlib.pyplot and saves it as 'plt'
+import matplotlib.pyplot as plt
+
+#imports the module 'random' 
+import random
+
+# imports the module 'pandas.util.testing' and saves it as 'tm'
+import pandas.util.testing as tm
+
+specifies the sample size
+tm.N = 1000
+
+# makes a data frame names 'df'
+df = tm.makeTimeDataFrame()
+
+#imports the module 'string'
+import string
+
+# sets object 'foo' to list the first 5 letters of a string 
+#  200 times or for the first 200 lines
+foo = list(string.letters[:5]) * 200
+
+# same thing again but set to a data frame indic?
+df['indic'] = list(string.letters[:5]) * 200
+
+#shuffles object 'foo'
+random.shuffle(foo)
+
+# creates a dataframe from shuffled data object 'foo'
+# ads a variabel? 
+df['indic2'] = foo
+
+# creates a boxplot to compare indic and indic2. rotates
+# 90 degrees to be horizontal
+df.boxplot(by=['indic', 'indic2'], fontsize=8, rot=90)
+
+
+#displays boxplot by referring to matplotlib.pyplot
+plt.show()

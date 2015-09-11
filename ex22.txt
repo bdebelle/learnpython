@@ -1,0 +1,189 @@
+Exercise 00
+
+mkdir : make directory
+
+cd : change directory
+
+ls : list content of current directory
+
+Exercise 1
+
+print : display text in terminal
+
+strings: A sequence of characters, often interpreted literally.
+
+Exercise 2
+
+# (octothorpe): used to comment out a line of code or text
+	
+Exercise 3
+
+numbers: A sequence of numerals, often integers, but possibly floats or decimals.
+
+	+ : plus (addition)
+
+	- : minus (subtraction)
+
+	/ : slash (division)
+
+	* : asterisk (multiplication)
+
+	% : percent (modulo - which returns the integer remainder after division of two numbers)
+
+	< : less than
+	
+	> : greater than
+
+	<= : less than equal
+
+	>= : greater than equal
+	
+Exercise 4
+
+variable : variables are places in memory in which values are saved. programmers use Variables
+	to make code read more like english. 
+	A data item that may take on more than one value during the runtime of a program
+
+Floating Point : 1 vs 1.0 pyhton 2.x deals in whole numbers and will round to nearest whole number
+	If you want decimal points, you must use floating point numbers. 
+	
+= : used to assign value to variables
+
+EXERCISE 5
+
+Format strings
+	%d : used for numbers "digits"
+
+	%s : used to put value in a string
+
+	%r : for "raw data" actually mean 'representation'
+	
+	% : provide the value after a string
+	
+Exercise 6
+
+	" : double quotes
+
+	' : single quote
+
+Exercise 7
+
+	+ : for joining strings without spaces
+
+	, : for joining strings with spaces
+
+Exercise 8
+
+	True / False : Possible values of Bullion objects
+
+Exercise 9
+
+	\n : escape sequence used for new line command
+
+	""": triple Quotes to set off several lines of text. 
+		will comment out unless given a function like print
+	
+Exercise 10
+
+Escape Sequences
+	\\ : used to escape a backslash within a string
+	
+	\' : used to escape a single quote within a string
+	
+	\" : used to escape a double quote within a string
+	
+	\n : new line command
+	
+	\t : tab within a string
+	
+	\v : vertical tab within a string
+	
+	''': Alt version of the triple quote
+
+Exercise 11
+
+	raw_input() : prompts the user to enter a value
+
+Exersice 12
+
+	raw_input("prompt") : ask questions to the user
+
+	pydoc : terminal command to get info on python
+	
+Exercise 13
+
+	argv : argument variable; allows arguments to be passed to a file 
+		when run from the console
+	
+Exercise 14
+
+	prompt : character or string that can signify a question being asked to the user
+
+Exercise 15
+
+	open() : make a file available python
+
+	. : dot operator to join a function ( or command or method) to an object
+
+	.read() : read contents of file
+
+	.close() : close the file so its no longer avialable to python
+
+Exercise 16
+
+	w : write mode
+
+	r : read mode
+
+	a : append mode
+
+	w+ : allows you to write and read
+
+	r+ : allows you to read and write
+
+	.truncate() : empties the file and reduces the size to 0
+
+	.write() : will write the text or code you place inside of ()
+	
+	; : semi-colon can separate commands on a single line
+	
+	len() : command that returns the length of a string
+	
+Exersice 17
+
+	os.path : a library that adapts the file/ directory address to the specific 
+			requirements of the operating system
+	exists: a function to determine whether a specific file exists
+			yields boolean True or False
+			
+Exercise 18
+
+	def: to define a custom function
+	
+	(args*): to refer to list of arguments in a function
+	
+	: and indent : to set a block for the function
+	
+Exercise 19
+
+ x
+ 
+ Exercise 20 
+ 
+ 	.seek() : go to a specific position within a file (in bytes)
+ 			.seek(0) goes to the begining
+ 	
+ 	.readline: read one line from a file
+ 	
+ 	+= : shortcut for incrementing a variable
+ 	
+ Exercise 21 
+ 
+ 	return: a value that a function makes available for use in a 
+ 			variable
+ 
+ 
+	
+	
+
+ 
