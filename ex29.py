@@ -36,7 +36,7 @@ if people == dogs:
 # 3. What happens if it isnt indented?  
 # 3A. IndentationError
 # 4. Can you put other boolean expressions from exercise 27 in the if-statement?
-# 4A. Yes. 
+# 4A. Yes. See extra credit below
 # 5. What happens if you change the initial variables for People, Cats, and dogs?
 # 5A. A different If statement is triggered
 
