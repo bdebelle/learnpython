@@ -43,7 +43,13 @@ elif door == "2":
 		print "Your body survives, powered by a mind of jello. Good Job!"
 	elif insanity == "4":
 		print "You are met by a man who intorduced himself as 'Morpheus'..."
-		print """ This is your last chance.\nAfter this, there is no turning back.\nYou take the blue pill\n -- the story ends, you wake up in your bed and believe whatever you want to believe.\nYou take the red pill\n -- you stay in Wonderland and I show you how deep the rabbit hole goes.
+		print """ 
+This is your last chance.
+After this, there is no turning back.\n
+You take the blue pill
+-- the story ends, you wake up in your bed and believe whatever you want to believe.\n
+You take the red pill
+-- you stay in Wonderland and I show you how deep the rabbit hole goes.\n
 		"""
 		pill = raw_input("blue or red?> ")
 
