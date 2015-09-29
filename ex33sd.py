@@ -1,48 +1,65 @@
-print "\nConverting while-loop to a function drill_1"
-def drill_1(n):
+i = 0
+numbers = [ ]
+
+while i < 6:
+	print "At the top i is %d" % i
+	numbers.append(i)
+	
+	i = i + 1
+	print "Numbers now: ", numbers
+	print "At the bottom i is %d" % i
+	
+print "The numbers: "
+
+for num in numbers:
+	print num
+
+print "\nConvert while-loop to a function and replace 6 in the test with a variable"
+
+
+def sd1(n):
 	i = 0
-	numbers1 = []
+	this_list = []
 	while i < n:
-		print "item: %d" % i
-		numbers1.append(i)
+		print "Item: %d" % i
+		this_list.append(i)
+
 		i = i + 1
-	print numbers1
+		print "Item now: %d" % i
+	print this_list
 
-print "\nUsing dril_1 with n=2"
-drill_1(2)
+print "\nCalling sd1 with n = 5"
+sd1(5)
 
-print "\nUsing dril_1 with n=8"
-drill_1(8)
+print "\nCalling sd1 with n = 9"
+sd1(9)
 
-print "\nCreating function drill_3 to allow variabale incriment size"
-def drill_3(n, s):
+print "\nAdding variable that will allow me to change the increment 'step'"
+
+def sd3(n, step):
 	i = 0
-	numbers3 = []
+	this_list2 = []
 	while i < n:
-		print "item: %d" % i
-		numbers3.append(i)
-		i = i + s
-		print numbers3
-#4 rewrite the script to use the function to what effect it has. 
-print "\nUsing drill_3 with n = 12 and s = 3"
-drill_3(12, 3)
+		print "Item is: %d" % i
+		this_list2.append(i)
+		i = i + step
+		print "Item is now: %d" % i
+	print this_list2
 
-# 5 write it to use for-loops and range instead. 
+print "\nCalling function sd3 with n = 10 and step = 2"
+sd3(10, 2)
 
-print "\ndrill_5 uses a for-loop and range instead"
-def drill_5(n, s):
-	numbers5 = range(0, n, s)
+print "\nCalling function sd3 with n = 12 and step = 3"
+sd3(12, 3)
+
+print "\nUsing For-loops and range in sd3"
+def sd5(n, step):
+	numbers5 = range(0, n, step)
 	for i in numbers5:
-		print "item: %d" % i
+		print "item is: %d" % i
 	print numbers5
 
-drill_5(14, 4)
-
-
-
-
-
-
+sd5(21, 3)
 
 
 
