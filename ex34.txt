@@ -30,3 +30,7 @@ animals = ['bear', 'python', 'peacock', 'kangaroo', 'whale', 'platypus']
 6. the animal at 2 is the third animal and is a peacock.
 7. the animal at 5 is the sixth animal and is a platypus.
 8. the animal at 4 is the fifth animal and is a whale.
+
+
+
+letters = ['Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
