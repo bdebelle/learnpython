@@ -21,47 +21,40 @@ def sd1(n):
 	i = 0
 	this_list = []
 	while i < n:
-		print "Item: %d" % i
+		print "At the top i is %d" % i
 		this_list.append(i)
 
 		i = i + 1
-		print "Item now: %d" % i
-	print this_list
+		print "Numbers now: %d" % i
+	print this_list 
 
-print "\nCalling sd1 with n = 5"
-sd1(5)
-
-print "\nCalling sd1 with n = 9"
+print "\nNow calling function sd1 with the value of n = 3"
+sd1(3)
+print "\nNow calling function sd1 with the value of n = 9"
 sd1(9)
 
-print "\nAdding variable that will allow me to change the increment 'step'"
+print "\nPassing in the Variable step in function sd3"
 
 def sd3(n, step):
 	i = 0
-	this_list2 = []
+	this_list = []
 	while i < n:
-		print "Item is: %d" % i
-		this_list2.append(i)
+		print "At the top i is %d" % i
+		this_list.append(i)
+
 		i = i + step
-		print "Item is now: %d" % i
-	print this_list2
+		print "Numbers now: %d" % i
+	print this_list
 
 print "\nCalling function sd3 with n = 10 and step = 2"
 sd3(10, 2)
 
-print "\nCalling function sd3 with n = 12 and step = 3"
-sd3(12, 3)
 
-print "\nUsing For-loops and range in sd3"
+print "\nWriting function sd5 to use for-loop and range"
+
 def sd5(n, step):
-	numbers5 = range(0, n, step)
-	for i in numbers5:
-		print "item is: %d" % i
-	print numbers5
+	numbers = range(0, n, step)
+	for i in numbers:
+		print "item is number: %d" % i
 
 sd5(21, 3)
-
-
-
-
-
