@@ -7,14 +7,17 @@ from time import sleep
 def gold_room():
 	print "This room is full of gold. How much do you take?"
 
-	how_much = int(raw_input("> ")) # This will allow the use of any intiger, not just 1 or 0
+	choice = raw_input("> ") # This will allow the use of any intiger, not just 1 or 0
+	if choice.isdigit(): # .isdigit will check to see if choice is an intiger
+		how_much = int(choice)
+	else:
+		dead("Man, learn to type a number!")
+
 	if how_much >= 50:
 		dead("You greedy bastard!")
-	elif how_much <= 51:
+	else:
 		print "Nice, you're not greedy. You win!"
 		exit(0) # this is an example of a good exit, No error will occur
-	else:
-		dead("Man, Learn to type a number.")
 
 def bear_room():
 	print "There is a bear in here!"
