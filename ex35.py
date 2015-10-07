@@ -1,21 +1,19 @@
 from sys import exit
-# What is exit?
+# Allows program to abort and the number inside exit() will indicate and error or not
+# 0 is a good exit, exit(100) will give different errors than exit(1) or 
+# exit(2)
 
 def gold_room():
 	print "This room is full of gold. How much do you take?"
 
-	next = int(raw_input("> "))
-	if next in range(0,49):
-		how_much = int(next)
-	else:
-		dead("Man, Learn to type a number.")
-
-	if how_much < 50:
+	how_much = int(raw_input("> ")) # This will allow the use of any intiger, not just 1 or 0
+	if how_much >= 50:
+		dead("You greedy bastard!")
+	elif how_much <= 51:
 		print "Nice, you're not greedy. You win!"
 		exit(0) # this is an example of a good exit, No error will occur
 	else:
-		dead("You greedy bastard!")
-
+		dead("Man, Learn to type a number.")
 
 def bear_room():
 	print "There is a bear in here!"
