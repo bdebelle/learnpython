@@ -108,7 +108,6 @@ def start():
 	print "There are three doors to choose from"
 	print "Which do you take?"
 	print "1, 2, or 3"
-
 	next = raw_input("> ")
 
 	if next == "1":
