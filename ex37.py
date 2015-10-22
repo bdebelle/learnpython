@@ -169,6 +169,19 @@ print 1, 2, 3
 print 1.0, 2.0, 3.0
 print (1, 2, 3)
 
+#dict
+name = {}
+name['son'] = 'Brian'
+name['father'] = 'Kevin'
+print "My name is %(son)s and my dads name is %(father)s" % name
+
+#dict again
+dict = {}
+dict['a'] = 'alpha'
+dict['b'] = 'bravo'
+dict['c'] = 'charlie'
+print dict
+
 print "-\\-"
 print "-\'-"
 print "-\"-"
