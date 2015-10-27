@@ -1,6 +1,6 @@
 def new(num_buckets=256):
 	"""Initializes a Map with the given number of buckets."""
-	aMap =[]
+	aMap =[] # This is a List
 	for i in range(0, num_buckets):
 		aMap.append([])
 	return aMap
