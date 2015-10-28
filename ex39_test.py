@@ -68,11 +68,9 @@ print '-' * 10
 
 print '-' * 10
 
-#hashmap.dump(states, cities)
+hashmap.dump(states, cities)
 
-print '-' * 10
 
-hashmap.extract(states)
 
 
 
