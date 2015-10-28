@@ -1,3 +1,5 @@
+import collections 
+
 def new(num_buckets=256):
 	"""Initializes a Map with the given number of buckets."""
 	aMap =[] # This is a List
@@ -62,6 +64,8 @@ def list(aMap):
 			for k, v in bucket:
 				print k, v
 				
+
+			
 # I dont believe this is what the study drill had in mind 
 #but it works to print all the contents of the dictionary
 def dump(aMap, foo):
@@ -69,8 +73,4 @@ def dump(aMap, foo):
 		print states
 	for cities in enumerate(foo):
 		print cities
-			
-		
-    
-
 

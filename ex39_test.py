@@ -1,5 +1,6 @@
 #These examples are included online but not in the hardcopy of LPTHW-3E
 import hashmap
+import collections
 
 # create a mapping of state to abbreviation
 states = hashmap.new()
@@ -63,11 +64,13 @@ print "The city for the state 'TX' is: %s" % city
 
 print '-' * 10
 
-hashmap.dump(states, cities)
-
-#print '-' * 10
-
 #hashmap.dump(cities)
+
+print '-' * 10
+
+hashmap.dump(states)
+
+
 
 
 
