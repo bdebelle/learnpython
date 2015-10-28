@@ -1,8 +1,8 @@
 def new(num_buckets=256):
 	"""Initializes a Map with the given number of buckets."""
 	aMap =[] # This is a List
-	for i in range(0, num_buckets):
-		aMap.append([])
+	for i in range(0, num_buckets): # Creates more lists inside aMap
+		aMap.append([]) # Creates more lists inside aMap
 	return aMap
 
 def hash_key(aMap, key):
@@ -62,7 +62,15 @@ def list(aMap):
 			for k, v in bucket:
 				print k, v
 				
-
-
+# I dont believe this is what the study drill had in mind 
+#but it works to print all the contents of the dictionary
+def dump(aMap, foo):
+	for states in enumerate(aMap):
+		print states
+	for cities in enumerate(foo):
+		print cities
+			
+		
+    
 
 
