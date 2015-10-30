@@ -54,7 +54,7 @@ class Track(object):
 	def prev(self):
 		'''jump to previous itme'''
 		self.index = (self.index - 1) % len(self.disk)
-		self.jump
+		self.jump()
 
 	def jump(self):
 		'''go to item'''
