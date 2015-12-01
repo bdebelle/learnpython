@@ -6,21 +6,21 @@ class Animal(object):
 class Dog(Animal):
 
 	def __init__(self, name):
-		##Dog has-a name 
+		##Dog has-a variable name 
 		self.name = name
 
 # Cat is-a Animal
 class Cat(Animal):
 
 	def __init__(self, name):
-		#Cat has-a name
+		#Cat has-a variable name
 		self.name = name
 
 # Person is-a object
 class Person(object):
 
 	def __init__(self, name):
-		## Person has-a name
+		## Person has-a variable name
 		self.name = name
 
 		## Person has-a pet of some kind
@@ -30,17 +30,17 @@ class Person(object):
 class Employee(Person):
 
 	def __init__(self, name, salary):
-		##
+		#The class Employee inherits something from Person
 		super(Employee, self).__init__(name)
-		##Employee has-a Salary
+		##Employee has-a variable Salary
 		self.salary = salary
 
 # Fish is-a object
 class Fish(object):
 	pass
 
-## Salmon is-a object
-class Salmon(object):
+## Salmon is-a Fish
+class Salmon(Fish):
 	pass
 
 ## Halibut is-a Fish
@@ -56,13 +56,13 @@ satan = Cat("Satan")
 ## mary is-a Person
 mary = Person("Mary")
 
-# Mary has-a pet satan
+# Mary has-a pet called satan
 mary.pet = satan
 
 ## Frank is-a Employee
 frank = Employee("Frank", 120000)
 
-## Frank has-a pet rover
+## Frank has-a pet called rover
 frank.pet = rover
 
 ## Flipper is-a instance of class Fish
