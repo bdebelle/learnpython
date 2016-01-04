@@ -246,7 +246,11 @@ a_game = Engine(a_map)
 a_game.play()
 
 
-
+# Returning Next Room?
+# Returning the next room as a string assigns this returned value to next_scene_name. We then call the next_scene function and give it the 
+# parameter of next_scene_name. The next_scene function looks at scenes dictionary with the next_scene_name as a key and gets the
+# corresponding value. The corresponding value is a new instance of the next room, So we create a mew instance of the next room and then 
+# call the enter funtion on that room. 
 
 
 
