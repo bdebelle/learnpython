@@ -119,7 +119,11 @@ class LaserWeaponArmory(Scene):
 		print "get the bomb. The code is 3 digits. Dont fuck this up."
 		code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
 		
-		print code
+		print """*HINT*:
+		&*738995---{{||?!905brF}}
+		$*@8>{}8-%s-{\/}-831@*$><
+		^?!FO4+=}}><(9100103)+=?/
+		""" % code
 
 		guess = raw_input("[keypad]> ")
 		
