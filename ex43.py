@@ -190,7 +190,11 @@ class EscapePod(Scene):
 
 		good_pod = randint(1,5)
 
-		print good_pod
+		print """*HINT*:
+		&*738995---{{||?!905brF}}
+		$*@8>{}8-{{%s}}-{\/}-831@*$><
+		^?!FO4+=}}><(9100103)+=?/
+		""" % good_pod
 
 		guess = raw_input("[pod #]> ")
 
