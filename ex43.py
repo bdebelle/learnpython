@@ -23,15 +23,16 @@ class Scene(object):
 
 class Engine(object):
 
-	def __init__(self, scene_map):
+	def __init__(self, scene_map, hero):
 		self.scene_map = scene_map
+		self.hero = hero
 
 	def play(self):
 		current_scene = self.scene_map.opening_scene()
 
 		while True:
 			print "\n---------"
-			next_scene_name = current_scene.enter()
+			next_scene_name = current_scene.enter(self.hero)
 			current_scene = self.scene_map.next_scene(next_scene_name)
 
 class Death(Scene):
@@ -43,7 +44,7 @@ class Death(Scene):
 		"My grandma is better at this than you."
 	]
 
-	def enter(self):
+	def enter(self, hero):
 		print Death.quips[randint(0, len(self.quips)-1)]
 		
 		print "Want to play again?"
@@ -61,7 +62,7 @@ class Death(Scene):
 
 class CentralCorridor(Scene):
 
-	def enter(self):
+	def enter(self, hero):
 		print "The Gothons of Planet Percal #25 have invaded your ship and destroyed"
 		print "your entire crew.  You are the last surviving member and your last"
 		print "mission is to get the neutron destruct bomb from the Weapons Armory,"
@@ -108,7 +109,7 @@ class CentralCorridor(Scene):
 
 class LaserWeaponArmory(Scene):
 
-	def enter(self):
+	def enter(self, hero):
 		print "You do a dive roll into the Weapon Armory, crouch and scan the room"
 		print "for more Gothons that might be hiding. Its dead quiet, too quiet."
 		print "You stand up and run to the far side of the room and find the"
@@ -116,7 +117,7 @@ class LaserWeaponArmory(Scene):
 		print "and you need the code to get the bomb out. If you get the code"
 		print "wrong 10 times the the lock closes forever and you can't"
 		print "get the bomb. The code is 3 digits. Dont fuck this up."
-		code = "%d%d%d" % (randint(1,1), randint(1,1), randint(1,1))
+		code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
 		
 		print code
 
@@ -143,7 +144,7 @@ class LaserWeaponArmory(Scene):
 
 class TheBridge(Scene):
 
-	def enter(self):
+	def enter(self, hero):
 		print "You burst on the Bridge with the bomb"
 
 		action = raw_input("> ")
@@ -157,7 +158,7 @@ class TheBridge(Scene):
 			print "it goes off."
 			return 'death'
 
-		elif action == "slowly place the bomb":
+		elif action == "place bomb":
 			print "You point your blaster at the bomb under your arm"
 			print "and the Gothons put their hands up and start to sweat."
 			print "You inch backward to the door, open it, and then carefully"
@@ -174,7 +175,7 @@ class TheBridge(Scene):
 
 class EscapePod(Scene):
 
-	def enter(self):
+	def enter(self, hero):
 		print "You rush through the ship desperately trying to make it to"
 		print "the escape pod before the whole ship exp[lodes. It seems like"
 		print "hardly any Gothons are on the ship, so your run is clear of"
@@ -203,11 +204,24 @@ class EscapePod(Scene):
 			print "bright star, taking out the Gothon ship and the same"
 			print "time. you won!"
 
-			return 'finished'
+			return 'final_fight'
+
+class Final_Fight(Scene):
+
+	def enter(self, hero):
+
+		monster = Monster('Gothon')
+		print "%s You have reached the final boss, the Mighty %s! Lets Fight!" % (hero.name, monster.name)
+
+		a_combat = Combat()
+		next_stage = a_combat.combat(hero, monster)
+		return next_stage
+
+
 
 class Finished(Scene):
 
-	def enter(self):
+	def enter(self, hero):
 		print "Want to play again?"
 		print "Y or N"
 
@@ -229,6 +243,7 @@ class Map(object):
 		'the_bridge' : TheBridge(),
 		'escape_pod' : EscapePod(),
 		'death' : Death(),
+		'final_fight' : Final_Fight(),
 		'finished' : Finished()
 	}
 
@@ -241,9 +256,7 @@ class Map(object):
 	def opening_scene(self):
 		return self.next_scene(self.start_scene)
 
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
-a_game.play()
+
 
 
 # Returning Next Room?
@@ -253,6 +266,72 @@ a_game.play()
 # call the enter funtion on that room. 
 
 
+# Build a Simple combat System
+
+class Combat(object):
+
+	def combat(self, hero, monster):
+		
+		round = 1 
+		while True:
+			print '='*30
+			print "Round %d" % round
+			print '='*30
+			print "Your HP: %d" % hero.hp
+			print "%s's HP: %d" % (monster.name, monster.hp)
+			print "Do you wish to attack?"
+			print '-'*10
+			print "1) Yes Attack!!!"
+			print "2) No I'm Scared!"
+			
+			try:
+				action = int(raw_input('> '))
+			except ValueError:
+				print "Please Enter a Number!"
+				continue
+
+			if action == 1:
+				hero.attack(monster)
+
+			if action == 2:
+				monster.attack(hero)
+
+			if hero.hp <= 0:
+				return 'death'
+
+			if monster.hp <= 0:
+				return 'finished'
+
+			round += 1
+
+class Human(object):
+
+	def __init__(self, name):
+		self.name = name
+		
+	def attack(self, target):
+		target.hp = target.hp - self.atk
+		print "%s attacks %s. %s's HP decreased by %d points." % (self.name, target.name, target.name, self.atk)
+		return target.hp
+
+
+
+class Hero(Human):
+
+	hp = 100
+	atk = 15
+
+class Monster(Human):
+
+	hp = 150
+	atk = 50
+
+
+
+a_map = Map('central_corridor')
+a_hero = Hero('Brian')
+a_game = Engine(a_map, a_hero)
+a_game.play()
 
 
 
