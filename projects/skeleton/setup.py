@@ -8,7 +8,7 @@ config = {
 	'author' : 'Brian DeBelle',
 	'url' : 'URL to get it at.',
 	'download_url' : 'Where to download it.',
-	'author_emial' : 'brian[dot]debelle[at]gmail[dot]com',
+	'author_email' : 'brian[dot]debelle[at]gmail[dot]com',
 	'version' : '0.1',
 	'install_requires' : ['nose'],
 	'packages' : ['NAME'], 
