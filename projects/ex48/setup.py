@@ -4,16 +4,16 @@ except ImportError:
     from distutils.core import setup
 
 config = { 
-	'description': 'simplegame',
+	'description': 'ex48',
 	'author' : 'Brian DeBelle',
 	'url' : 'URL to get it at.',
 	'download_url' : 'Where to download it.',
 	'author_email' : 'brian[dot]debelle[at]gmail[dot]com',
 	'version' : '0.1',
 	'install_requires' : ['nose'],
-	'packages' : ['simplegame'], 
+	'packages' : ['ex48'], 
 	'scripts' : [],
-	'name' : 'simplegame'
+	'name' : 'ex48'
 }
 
 setup(**config)
